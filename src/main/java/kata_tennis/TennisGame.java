@@ -12,19 +12,24 @@ public class TennisGame {
 		String score = "";
 
 		if (playerAScore == playerBScore) {
-			if (playerAScore == 0)
-				score = "Love all";
-			else if (playerAScore == 1)
-				score = "Fifteen all";
+			score = convertToScore(playerAScore) + " all";
 		} else if (playerAScore == 0) {
-			if (playerBScore == 1)
-				score = "Love,Fifteen";
-			else if (playerBScore == 2)
-				score = "Love,Thirty";
+			score = "Love," + convertToScore(playerBScore);
 		} else if (playerAScore == 1) {
-			score = "Fifteen,Love";
+			score = convertToScore(playerAScore) + ",Love";
 		}
 		return score;
+	}
+
+	private String convertToScore(int score) {
+		String result = "";
+		if (score == 0)
+			result = "Love";
+		else if (score == 1)
+			result = "Fifteen";
+		else if (score == 2)
+			result = "Thirty";
+		return result;
 	}
 
 	public void playerAWin() {
