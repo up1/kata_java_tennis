@@ -18,7 +18,7 @@ public class TennisGame {
 
 		if (isWinner()) {
 			score = getPlayerHaveHighScore() + " win";
-		} else if (playerAScore >= 3 && playerAScore == playerBScore) {
+		} else if (isDeuce()) {
 			score = "Deuce";
 		} else if (isAdvantage()) {
 			score = "Advantage " + getPlayerHaveHighScore();
@@ -30,6 +30,10 @@ public class TennisGame {
 			score = convertToScore(playerAScore) + "," + convertToScore(playerBScore);
 		}
 		return score;
+	}
+
+	private boolean isDeuce() {
+		return playerAScore >= 3 && playerAScore == playerBScore;
 	}
 
 	private boolean isAdvantage() {
