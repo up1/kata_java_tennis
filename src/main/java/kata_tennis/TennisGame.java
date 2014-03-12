@@ -16,7 +16,7 @@ public class TennisGame {
 		} else if (playerAScore == 0) {
 			score = "Love," + convertToScore(playerBScore);
 		} else {
-			score = convertToScore(playerAScore) + ",Love";
+			score = convertToScore(playerAScore) + "," + convertToScore(playerBScore);
 		}
 		return score;
 	}
