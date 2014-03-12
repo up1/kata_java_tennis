@@ -11,7 +11,7 @@ public class TennisGame {
 	public String getScore() {
 		String score = "";
 
-		if ((playerAScore == 4 || playerBScore == 4) && Math.abs(playerAScore - playerBScore) > 1) {
+		if (isWinner()) {
 			score = "Player B win";
 			if (playerAScore == 4)
 				score = "Player A win";
@@ -25,6 +25,10 @@ public class TennisGame {
 			score = convertToScore(playerAScore) + "," + convertToScore(playerBScore);
 		}
 		return score;
+	}
+
+	private boolean isWinner() {
+		return (playerAScore == 4 || playerBScore == 4) && Math.abs(playerAScore - playerBScore) > 1;
 	}
 
 	private String convertToScore(int score) {
