@@ -6,7 +6,7 @@ public class TennisGame {
 	}
 
 	public String getScore() {
-		return null;
+		return "Love all";
 	}
 
 }
