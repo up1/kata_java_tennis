@@ -9,4 +9,8 @@ public class TennisGame {
 		return "Love all";
 	}
 
+	public void playerAWin() {
+		
+	}
+
 }
