@@ -84,6 +84,13 @@ public class TennisGameTest {
 		String score = tennisGame.getScore();
 		assertEquals("Deuce", score);
 	}
+	
+	@Test
+	public void playerAHaveAdvantageShouldReturnAdvantagePlayerA() throws Exception {
+		createGame(5, 4);
+		String score = tennisGame.getScore();
+		assertEquals("Advantage Player A", score);
+	}
 
 	private void createGame(int scoreA, int scoreB) {
 		for (int i = 0; i < scoreA; i++) {
