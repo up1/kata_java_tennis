@@ -63,6 +63,13 @@ public class TennisGameTest {
 		String score = tennisGame.getScore();
 		assertEquals("Deuce", score);
 	}
+	
+	@Test
+	public void playerAWinGame() throws Exception {
+		createGame(4, 0);
+		String score = tennisGame.getScore();
+		assertEquals("Player A win", score);
+	}
 
 	private void createGame(int scoreA, int scoreB) {
 		for (int i = 0; i < scoreA; i++) {
