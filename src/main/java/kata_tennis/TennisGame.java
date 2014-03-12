@@ -48,7 +48,7 @@ public class TennisGame {
 	}
 
 	private boolean isWinner() {
-		return (playerAScore >= 4 || playerBScore >= 4) && Math.abs(playerAScore - playerBScore) > 1;
+		return (playerAScore >= 4 || playerBScore >= 4) && Math.abs(playerAScore - playerBScore) == 1;
 	}
 
 	private String convertToScore(int score) {
