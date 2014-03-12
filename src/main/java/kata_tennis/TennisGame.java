@@ -20,8 +20,10 @@ public class TennisGame {
 			score = getPlayerWinner() + " win";
 		} else if (playerAScore >= 3 && playerAScore == playerBScore) {
 			score = "Deuce";
-		} else if (playerAScore>=4 && playerBScore >= 4) {
-			score = "Advantage " + playerA;
+		} else if (playerAScore >= 4 && playerBScore >= 4) {
+			score = "Advantage " + playerB;
+			if (playerAScore > playerBScore)
+				score = "Advantage " + playerA;
 		} else if (playerAScore == playerBScore) {
 			score = convertToScore(playerAScore) + " all";
 		} else if (playerAScore == 0) {

@@ -91,6 +91,13 @@ public class TennisGameTest {
 		String score = tennisGame.getScore();
 		assertEquals("Advantage Player A", score);
 	}
+	
+	@Test
+	public void playerBHaveAdvantageShouldReturnAdvantagePlayerB() throws Exception {
+		createGame(4, 5);
+		String score = tennisGame.getScore();
+		assertEquals("Advantage Player B", score);
+	}
 
 	private void createGame(int scoreA, int scoreB) {
 		for (int i = 0; i < scoreA; i++) {
