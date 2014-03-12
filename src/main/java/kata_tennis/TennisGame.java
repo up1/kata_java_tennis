@@ -10,22 +10,19 @@ public class TennisGame {
 
 	public String getScore() {
 		String score = "";
-		
-		if(playerAScore == playerBScore) {
-			if(playerAScore == 0) score = "Love all";
-			if(playerAScore == 1) score = "Fifteen all";
-		}
-		
-		else if (playerAScore == 1) {
-			if (playerAScore == playerBScore) {
-				//score = "Fifteen all";
-			} else {
-				score = "Fifteen,Love";
-			}
-		} else if (playerBScore == 1) {
-			score = "Love,Fifteen";
-		} else if(playerBScore == 2) {
-			score = "Love,Thirty";
+
+		if (playerAScore == playerBScore) {
+			if (playerAScore == 0)
+				score = "Love all";
+			else if (playerAScore == 1)
+				score = "Fifteen all";
+		} else if (playerAScore == 0) {
+			if (playerBScore == 1)
+				score = "Love,Fifteen";
+			else if (playerBScore == 2)
+				score = "Love,Thirty";
+		} else if (playerAScore == 1) {
+			score = "Fifteen,Love";
 		}
 		return score;
 	}
