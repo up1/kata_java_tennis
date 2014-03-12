@@ -25,7 +25,7 @@ public class TennisGameTest {
 	@Test
 	public void bothPlayerDrawWithFifteenShouldReturnFifteenAll() throws Exception {
 		tennisGame.playerAWin();
-		tennisGame.playerAWin();
+		tennisGame.playerBWin();
 		String score = tennisGame.getScore();
 		assertEquals("Fifteen all", score);
 	}
