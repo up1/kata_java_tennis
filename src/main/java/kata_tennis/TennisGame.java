@@ -17,13 +17,11 @@ public class TennisGame {
 		String score = "";
 
 		if (isWinner()) {
-			score = getPlayerWinner() + " win";
+			score = getPlayerHaveHighScore() + " win";
 		} else if (playerAScore >= 3 && playerAScore == playerBScore) {
 			score = "Deuce";
 		} else if (isAdvantage()) {
-			score = "Advantage " + playerB;
-			if (playerAScore > playerBScore)
-				score = "Advantage " + playerA;
+			score = "Advantage " + getPlayerHaveHighScore();
 		} else if (playerAScore == playerBScore) {
 			score = convertToScore(playerAScore) + " all";
 		} else if (playerAScore == 0) {
@@ -38,9 +36,9 @@ public class TennisGame {
 		return playerAScore >= 4 && playerBScore >= 4 && Math.abs(playerAScore - playerBScore) == 1;
 	}
 
-	private String getPlayerWinner() {
+	private String getPlayerHaveHighScore() {
 		String name = this.playerB;
-		if (playerAScore == 4)
+		if (playerAScore > playerBScore)
 			name = this.playerA;
 		return name;
 	}
