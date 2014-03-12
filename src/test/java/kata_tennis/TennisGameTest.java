@@ -36,5 +36,13 @@ public class TennisGameTest {
 		String score = tennisGame.getScore();
 		assertEquals("Love,Fifteen", score);
 	}
+	
+	@Test
+	public void playerBWinInFirstTwoBall() throws Exception {
+		tennisGame.playerBWin();
+		tennisGame.playerBWin();
+		String score = tennisGame.getScore();
+		assertEquals("Love,Thirty", score);
+	}
 
 }
