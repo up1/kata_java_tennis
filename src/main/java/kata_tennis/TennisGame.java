@@ -5,16 +5,19 @@ public class TennisGame {
 	int playerAScore = 0;
 	int playerBScore = 0;
 
+	String playerA;
+	String playerB;
+
 	public TennisGame(String playerA, String playerB) {
+		this.playerA = playerA;
+		this.playerB = playerB;
 	}
 
 	public String getScore() {
 		String score = "";
 
 		if (isWinner()) {
-			score = "Player B win";
-			if (playerAScore == 4)
-				score = "Player A win";
+			score = getPlayerWinner() + " win";
 		} else if (playerAScore >= 3 && playerAScore == playerBScore) {
 			score = "Deuce";
 		} else if (playerAScore == playerBScore) {
@@ -25,6 +28,13 @@ public class TennisGame {
 			score = convertToScore(playerAScore) + "," + convertToScore(playerBScore);
 		}
 		return score;
+	}
+
+	private String getPlayerWinner() {
+		String name = this.playerB;
+		if (playerAScore == 4)
+			name = this.playerA;
+		return name;
 	}
 
 	private boolean isWinner() {
