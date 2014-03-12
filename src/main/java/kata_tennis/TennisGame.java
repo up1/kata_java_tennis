@@ -9,10 +9,16 @@ public class TennisGame {
 	}
 
 	public String getScore() {
-		String score = "Love all";
-		if (playerAScore == 1) {
+		String score = "";
+		
+		if(playerAScore == playerBScore) {
+			if(playerAScore == 0) score = "Love all";
+			if(playerAScore == 1) score = "Fifteen all";
+		}
+		
+		else if (playerAScore == 1) {
 			if (playerAScore == playerBScore) {
-				score = "Fifteen all";
+				//score = "Fifteen all";
 			} else {
 				score = "Fifteen,Love";
 			}
