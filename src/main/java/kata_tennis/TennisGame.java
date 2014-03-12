@@ -18,6 +18,8 @@ public class TennisGame {
 			}
 		} else if (playerBScore == 1) {
 			score = "Love,Fifteen";
+		} else if(playerBScore == 2) {
+			score = "Love,Thirty";
 		}
 		return score;
 	}
