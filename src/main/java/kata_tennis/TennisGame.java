@@ -1,7 +1,7 @@
 package kata_tennis;
 
 public class TennisGame {
-	
+
 	int playerAScore = 0;
 	int playerBScore = 0;
 
@@ -9,16 +9,18 @@ public class TennisGame {
 	}
 
 	public String getScore() {
-		if(playerAScore==1) {
-			if(playerAScore == playerBScore) {
-				return "Fifteen all";
+		String score = "Love all";
+		if (playerAScore == 1) {
+			if (playerAScore == playerBScore) {
+				score = "Fifteen all";
+			} else {
+				score = "Fifteen,Love";
 			}
-			return "Fifteen,Love";
 		}
-		return "Love all";
+		return score;
 	}
 
-	public void playerAWin() {		
+	public void playerAWin() {
 		playerAScore++;
 	}
 
