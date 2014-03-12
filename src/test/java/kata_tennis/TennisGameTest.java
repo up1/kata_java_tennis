@@ -125,6 +125,13 @@ public class TennisGameTest {
 		String score = tennisGame.getScore();
 		assertEquals("Player B win", score);
 	}
+	
+	@Test
+	public void playerAWinAfterSecondAdvantage() throws Exception {
+		createGame(9, 7);
+		String score = tennisGame.getScore();
+		assertEquals("Player A win", score);
+	}
 
 	private void createGame(int scoreA, int scoreB) {
 		for (int i = 0; i < scoreA; i++) {
