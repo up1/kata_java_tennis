@@ -10,11 +10,12 @@ public class TennisGame {
 
 	public String getScore() {
 		String score = "";
-		
-		if(playerAScore==4 || playerBScore == 4) {
+
+		if ((playerAScore == 4 || playerBScore == 4) && Math.abs(playerAScore - playerBScore) > 1) {
 			score = "Player B win";
-			if(playerAScore == 4) score = "Player A win";
-		} else if (playerAScore == 3 && playerAScore == playerBScore) {
+			if (playerAScore == 4)
+				score = "Player A win";
+		} else if (playerAScore >= 3 && playerAScore == playerBScore) {
 			score = "Deuce";
 		} else if (playerAScore == playerBScore) {
 			score = convertToScore(playerAScore) + " all";
